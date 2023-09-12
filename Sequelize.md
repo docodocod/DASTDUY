@@ -7,7 +7,7 @@
 
 >npm install sequelize sequelize-cli mysql2<br>
 
-설치완료 후 **npx seqeulize init** 명령어 호출
+설치완료 후 **npx sequelize init** 명령어 호출
 
     const Sequelize = require('sequelize');
     const User = require('./user');
@@ -31,15 +31,15 @@
 
 ## 시퀄라이즈를 이용하여 DB 연결 (app.js)
 
-    const {sequelize} = require('./models');<br>
-    //force : 서버 실행 시 마다 테이블을 재생성 할 것인지 아닌지<br>
-    sequelize.sync({force: false})<br>
-        .then(()=>{<br>
-        console.log("DB Connected Success");<br>
-        })<br>
-        .catch((err)=> {<br>
-        console.error(err);<br>
-    });<br>
+    const {sequelize} = require('./models');
+    //force : 서버 실행 시 마다 테이블을 재생성 할 것인지 아닌지
+    sequelize.sync({force: false})
+        .then(()=>{
+        console.log("DB Connected Success");
+        })
+        .catch((err)=> {
+        console.error(err);
+    });
 
 ## 모델 생성<br>
     const Sequelize = require('sequelize');
